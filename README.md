@@ -1,11 +1,11 @@
+<!-- omit from toc -->
 # PROJETOS
 
-- [PROJETOS](#projetos)
-  - [PROJETO 1](#projeto-1)
-    - [Objetivo de projeto](#objetivo-de-projeto)
-    - [Módulo 1 - Gerar registro do funcionário](#módulo-1---gerar-registro-do-funcionário)
-    - [Módulo 2 - Gerar apresentação do usuário](#módulo-2---gerar-apresentação-do-usuário)
-    - [Resultado final](#resultado-final)
+- [PROJETO 1](#projeto-1)
+  - [Objetivo de projeto](#objetivo-de-projeto)
+  - [Módulo 1 - Gerar registro do funcionário](#módulo-1---gerar-registro-do-funcionário)
+  - [Módulo 2 - Gerar apresentação do usuário](#módulo-2---gerar-apresentação-do-usuário)
+  - [Resultado final](#resultado-final)
 
 
 ## PROJETO 1
