@@ -1,51 +1,87 @@
 <!-- omit from toc -->
 # PROJETOS
 
-- [PROJETO 1](#projeto-1)
-  - [Objetivo de projeto](#objetivo-de-projeto)
-  - [Módulo 1 - Gerar registro do funcionário](#módulo-1---gerar-registro-do-funcionário)
-  - [Módulo 2 - Gerar apresentação do usuário](#módulo-2---gerar-apresentação-do-usuário)
-  - [Resultado final](#resultado-final)
+- [PROJETO 1 - Login de Usuário](#projeto-1---login-de-usuário)
+- [PROJETO 2 - Minigame com Turtle Graphics](#projeto-2---minigame-com-turtle-graphics)
 
 
-## PROJETO 1
 
-### Objetivo de projeto
 
-Estamos criando um módulo de login do nosso aplicativo, e você deve obter as 
-seguintes informações do funcionário.
+## PROJETO 1 - Login de Usuário
 
-[link-video](https://membros.devaprender.com/area/produto/item/2189133)
+Estamos criando um módulo de login e nesse projeto trabalhamos o armazenamento 
+de dados do input do usuário em variáveis, uso de biblioteca *datetime* para 
+trabalhar com datas inseridas pelo usuário e datas do sistema, operações 
+matemáticas, listas e sorteio randômico com o uso da biblioteca *random*.
 
-### Módulo 1 - Gerar registro do funcionário
-
-**Funcionalidades do módulo 1**
+<!-- omit from toc -->
+### Requisições
 
 1. Obtenha o nome do usuário
-
 2. Obtenha a idade do usuário
-
-3. Registre de forma automática a data do cadastro do usuário, usando a data do registro como data de registro
-
-4. Para cada novo funcionário que é registrado na empresa, ele recebe um dos seguintes cartões, que é sorteado de forma aleatória:
+3. Registre de forma automática a data do cadastro do usuário, usando a data do 
+   registro como data de registro
+4. Para cada novo funcionário que é registrado na empresa, ele recebe um dos 
+   seguintes cartões, que é sorteado de forma aleatória:
 
         cartoes = ['R$50,00','R$250,00','R$120,00']
 
+5. Guarde informações sobre a data de aniversário do funcionário(dd/mm/aaaa)
 
-1. Guarde informações sobre a data de aniversário do funcionário(dd/mm/aaaa)
+Usando os dados obtidos, exiba as seguintes informações:
 
-### Módulo 2 - Gerar apresentação do usuário
+    Olá (nome do usuário), seu registro foi concluído com sucesso no dia(data de cadastro no formato dd/mm/aaaa).
+    Parabéns, houve um sorteio e você ganhou um cartão de compras no valor de (valor sorteado).
 
-**Funcionalidades do módulo 2 - Mensagem de boas vindas!**
+<!-- omit from toc -->
+### Resultado
 
-Usando os dados obtidos no módulo 1, exiba as seguintes informações:
+<!-- colocar gif do projeto funcionando -->
 
-```console
-Olá (nome do usuário), seu registro foi concluído com sucesso no dia(data de cadastro no formato dd/mm/aaaa).
-Parabéns, houve um sorteio e você ganhou um cartão de compras no valor de (valor sorteado).
-```
+<!-- omit from toc -->
+### Código
 
-### Resultado final
+> [registration.py](https://github.com/eliasalbuquerque/python-devaprender/blob/master/registration.py)
 
-[gist.github.com/eliasalbuquerque](https://gist.github.com/eliasalbuquerque/23f9bc729ec01b5c7a90718f9cfd87a8)
 
+
+
+## PROJETO 2 - Minigame com Turtle Graphics
+
+Usar a biblioteca Trutle Graphics para gerar um minijogo que movimenta o objeto 
+através do input do usuário.
+
+<!-- omit from toc -->
+### Requisições
+
+- **Desafio 1:** Monte um mini-game turtle, que possibilite que o usuário controle para qual
+direção a tartaruga deve andar (frente/trás) e qual ângulo deverá ser tomado a
+cada nova movimentação.
+
+- **Desafio 2:** Usando o mini-game, desenha um quadrado passando instruções para a turtle, 
+totalmente através do input do usuário.
+
+<!-- omit from toc -->
+### Resultado
+
+<img src="https://github.com/eliasalbuquerque/python-devaprender/blob/master/assets/turtle.gif" alt="Executando o programa no VS Code, o programa solicita a direção e a distância a ser percorrida pela tartaruga. Após a inserção, a tartaruga se move na direção inserida." title="Minigame Turtle Python" height="400"/>
+
+<!-- omit from toc -->
+### Código
+
+> [mini-game.py](https://github.com/eliasalbuquerque/python-devaprender/blob/master/mini-game.py)
+
+
+
+
+
+<!-- ## PROJETO  -->
+
+<!-- omit from toc -->
+<!-- ### Requisições -->
+
+<!-- omit from toc -->
+<!-- ### Resultado -->
+
+<!-- omit from toc -->
+<!-- ### Código -->
