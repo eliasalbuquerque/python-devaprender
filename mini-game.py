@@ -49,6 +49,50 @@
 
 # t.screen.mainloop()
 
-from turtle import Turtle
+# Importing turtle module
+import turtle
+import os
 
-t = Turtle()
+# criando o objeto 
+t = turtle.Turtle()
+
+# criando config iniciais
+t.speed(1)
+t.shape("turtle")
+t.color("green")
+
+# manual do jogo
+print('MOVIMENTAÇÃO:')
+print('Direção:\n\ta = para trás\n\ts = para baixo\n\td = para frente\n\tw = para cima')
+print('Distância: de 1 a 10') 
+print('Exemplo:\n\tInserir direção e distância: a10')
+
+# movimentacao
+while True:
+    dist = input('Inserir direção e distância: ')
+    t.forward(dist)
+
+
+# t.forward(100)
+# t.right(90)
+# t.forward(100)
+
+# Hiding the turtle
+# t.hideturtle()
+
+
+# ------------- SPACE TO FINISH APP ----------------
+# Function to close the window when space key is pressed
+# def close_window():
+    # turtle.bye()
+
+# Binding the space key to the close_window function
+# turtle.onkey(close_window, "space")
+
+# Listening for key presses
+# turtle.listen()
+# ------------- SPACE TO FINISH APP ----------------
+
+
+# Keeping the window open until it is manually closed or space key is pressed
+turtle.mainloop()
