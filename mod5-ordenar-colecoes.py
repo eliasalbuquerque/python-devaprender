@@ -2,6 +2,12 @@
 # 5.11 - Como ordenadar coleções através de propriedades
 
 
+# NOTE:
+# listas[ ]
+# tuplas( )
+# dicionario{ }
+# todas as 3 sao chamadas de colecoes.
+
 # 1. ordenando uma lista de dicionarios
 pessoas = [
     {'nome': 'John',
