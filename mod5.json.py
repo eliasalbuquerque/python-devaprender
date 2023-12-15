@@ -154,7 +154,7 @@ def local_arquivo_json(nome_arquivo):
 def gerando_arquivo_json(dicionario, nome_arquivo_json):
     arquivo = local_arquivo_json(nome_arquivo_json)
     with open(arquivo, 'w', encoding='utf-8') as arquivo_json:
-        return json.dump(data, arquivo_json, indent=4, ensure_ascii=False)
+        return json.dump(dicionario, arquivo_json, indent=4, ensure_ascii=False)
 
 
 def lendo_arquivo(nome_arquivo_json):
