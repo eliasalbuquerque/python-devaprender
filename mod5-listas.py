@@ -1,16 +1,21 @@
 # 202312 - Python 3.12.0
-# 5.2 - Criando listas com Python                               --> ln: 8
-# 5.3 - Encontre valores e manipulacao de itens de uma lista    --> ln: 89
-# 5.4 - Como ordenar listas simples                             --> ln: 142
-# 5.5 - Trabalhar com multiplas listas usando o ZIP             --> ln: 169
+# 5.2  - Criando listas com Python                              --> ln: 9
+# 5.3  - Encontre valores e manipulacao de itens de uma lista   --> ln: 92
+# 5.4  - Como ordenar listas simples                            --> ln: 145
+# 5.5  - Trabalhar com multiplas listas usando o ZIP            --> ln: 172
+# 5.12 - Processando itens de uma lista com Map                 --> ln: 217
+# 5.13 - Como filtrar dados de uma colecao usando filter        --> ln: 258
+# 5.14 - Sets                                                   --> ln: 315
 
 
 # 5.2 - Criando listas com Python
 
 
 # 1. listas e indice (index)
+from itertools import zip_longest
+import random
 precos = [10, 20, 30]
-print(f'1. indice: {precos[2]}')  # 30
+print(f'\n1. indice: {precos[2]}')  # 30
 
 # 2. descobrir o index
 precos = [10, 20, 30, 50, 50, 60, 70, 90, 90, 100, 150, 200, 250, 300]
@@ -36,7 +41,7 @@ print(f'7. dados da lista: {itens[9]}')  # dado float = 2.5
 lista_inteiros = [9] * 10
 lista_string = ['teste'] * 5
 
-print(f'8. gerar lista: {lista_inteiros}')  # por multiplicacao
+print(f'\n8. gerar lista: {lista_inteiros}')  # por multiplicacao
 print(f'9. gerar lista: {lista_string}')  # por multiplicacao
 
 # 10. por uma faixa de numeros (range)
@@ -64,7 +69,7 @@ print(f'13. matriz: {matriz_de_nomes[0][0]}')
 # Crie uma lista que tenha os nomes dos 3 objetos que você mais usa durante o
 # dia e imprima ele na tela
 personal_objects = ['Laptop', 'G-Shock DW-5600', 'Cellphone']
-print(f'14. desafio 1: {personal_objects}')
+print(f'\n14. desafio 1: {personal_objects}')
 
 
 # DESAFIO 2:
@@ -96,7 +101,7 @@ anos = [2020, 2030, 2040, 2050]
 
 # 17. adicionar item no final da lista
 valores.append(10)
-print(f'17. adicionar item: {valores}')
+print(f'\n17. adicionar item: {valores}')
 
 # 18. juntar duas listas em uma (unir)
 valores.extend(nomes)
@@ -143,12 +148,12 @@ print(f'30. reset lista: {anos}')
 
 
 # 31. gerar lista aleatoria
-import random
 def generate_random_list(minimum, maximum, length):
     return [random.randint(minimum, maximum) for _ in range(length)]
 
+
 valores = generate_random_list(1, 40, 10)
-print(f'31. ordenar lista: {valores}')
+print(f'\n31. ordenar lista: {valores}')
 
 # 32. ordenar lista: ordem crescente
 lista_crescente = list(valores)
@@ -173,15 +178,14 @@ print(f'34. ordenar lista: {inverter_lista}')
 lista_letras = ['A', 'B', 'C', 'D', 'E']
 lista_numeros = [1, 2, 3, 4, 5]
 
-print('35. multiplas listas')
+print('\n35. multiplas listas')
 for a, b in zip(lista_letras, lista_numeros):
     print(f'    {a} : {b}')
 
 # 36. Trabalhando com multiplas listas de tamanhos diferentes
-from itertools import zip_longest
 
 lista_titulos = ['titulo 1', 'titulo 2', 'titulo 3', 'titulo 4', 'titulo 5']
-lista_produtos = ['produto 1','produto 2','produto 3']
+lista_produtos = ['produto 1', 'produto 2', 'produto 3']
 
 print('36. multiplas listas')
 for a, b in zip_longest(lista_titulos, lista_produtos):
@@ -210,3 +214,127 @@ precos = ['R$500,00', 'R$1500,00', 'R$2700,00', 'R$5000,00']
 
 for a, b in zip_longest(produtos, precos):
     print(f'Produto: {a} encontrado no valor de {b}')
+
+
+# 5.12 - Processando itens de uma lista com Map
+
+
+# 38. criando listas usando loops e range()
+numeros = []
+for i in range(5):
+    numeros.append(i)
+print(f'\n38. gerar listas automaticas: {numeros}')
+
+# 39. usando a funcao map
+nomes = ['larissa', 'rafael', 'marcos', 'john']
+
+
+def aprovar_pessoas(nomes):
+    return nomes + ' APROVADO'
+
+
+aprovados = list(map(aprovar_pessoas, nomes))
+print(f'39. map: {aprovados}')
+
+
+# DESAFIO
+# Extraia as cores da lista a seguir e coloque as em uma nova lista. Finalmente
+# imprima a nova lista na tela.
+
+pinturas = [
+    ['Pintura Classica', 'Azul', 1857],
+    ['Pintura Medieval', 'Vermelha', 1867],
+    ['Pintura Moderna', 'Verde', 1897]
+]
+
+
+def extrair_cores(pinturas):
+    return pinturas.pop(1)
+
+
+cores = list(map(extrair_cores, pinturas))
+print(f'40. desafio map: {cores}')
+
+
+# 5.13 - Como filtrar dados de uma colecao usando filter
+
+
+nomes = ['larissa', 'rafael', 'marcos', 'john']
+
+# 41. filtrando dados dentro de uma lista
+# exemplo 1
+
+
+def pessoa_aprovada(pessoa):
+    if pessoa == 'marcos':
+        return True
+    else:
+        return False
+
+
+print(f'\n41. filter: {list(filter(pessoa_aprovada, nomes))}')
+
+# exemplo 2
+pinturas = [
+    ['Pintura Classica', 'Azul', 1857],
+    ['Pintura Medieval', 'Vermelha', 1867],
+    ['Pintura Moderna', 'Verde', 1897]
+]
+
+
+def eh_antiguidade(pintura):
+    if pintura[2] < 1890:  # para o index 2 de cada lista...
+        return True
+    else:
+        return False
+
+
+# filtra funcao usando o parametro pinturas
+pintura_antiga = list(filter(eh_antiguidade, pinturas))
+print(f'42. filter: {pintura_antiga}')
+
+
+# DESAFIO
+# Usando a lista abaixo, filtre apenas as vagas com salário acima de R$2500
+vagas = [
+    ['vaga 1', 1200],
+    ['vaga 2', 2550],
+    ['vaga 3', 5000]
+]
+
+
+def verificar_salario(salario):
+    if salario[1] > 2500:
+        return True
+
+
+salario = list(filter(verificar_salario, vagas))
+print(f'43. desafio filter: {salario}')
+
+
+# 5.14 - Sets --> ln: 315
+
+
+# 44. removendo itens repetidos de uma lista com set()
+numeros = [2, 2, 5, 8]
+frutas = ['maca', 'uva', 'banana', 'maca', 'morango']
+
+set_numeros = set(numeros)
+set_frutas = set(frutas)
+
+print(f'\n44. set: {set_numeros}')
+print(f'45. set: {set_frutas}')
+
+# NOTE:
+# a funcao set() transforma a lista em um dicionario{}, cujo valor dos itens 
+# contidos nao podem ser duplicados, como no exemplo, numero 2 e maca.
+
+# 46. comparando itens unicos entre listas
+numeros_1 = [2, 2, 5, 8]
+numeros_2 = [2, 3, 2, 9]
+
+a = set(numeros_1)
+b = set(numeros_2)
+
+# comparando . symmetric_difference ( comparado )
+print(f'46. set diferença: {a.symmetric_difference(b)}')
