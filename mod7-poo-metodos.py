@@ -1,6 +1,7 @@
 # 202312 - Python 3.12.0
-# 7.3 - Métodos de uma classe                       --> ln: 6
-# 7.5 - Métodos comuns VS Instância VS Classe       --> ln: 41
+# 7.3 - Métodos de uma classe                                   --> ln: 7
+# 7.5 - Métodos comuns VS Instância VS Classe                   --> ln: 42
+# 7.9 - O que são Magic/dunder Methods (Métodos especiais)      --> ln: 93
 
 
 # 7.3 - Métodos de uma classe
@@ -46,6 +47,7 @@ print()
 # métodos estáticos
 
 class Computador:
+    # atributo de classe
     so = 'Windows 11'
 
     def __init__(self, marca, memoria, video):
@@ -58,7 +60,7 @@ class Computador:
         print(f'2. {self.marca, self.memoria, self.video, self.so}')
 
     # metodo de classe
-    @classmethod
+    @classmethod  # decorador
     def computador_escritorio(cls, memoria):
         return cls('Dell', memoria, 'Intel integrada')
 
@@ -86,3 +88,40 @@ computador2.exibir_dados_computador()
 print(f'2. {Computador.roda_programas_pesados(16)}')
 
 print()
+
+
+# 7.9 - O que são Magic/dunder Methods (Métodos especiais)
+
+
+# SPECIAL VARIABLES no console, e METODOS especiais na documentacao:
+# Alguns exemplos:
+# __init__
+# __repr__
+# __len__
+
+class Pessoa:
+    def __init__(self, nome):
+        self.nome = f'Sou {nome}'
+        self.caracteristicas = ['calmo', 'obstinado', 'acetivo']
+
+    # repr: representacao para programadores
+    def __repr__(self):
+        return 'Classe Pessoa com propriedades "nome" e "caracteristicas"'
+
+    def __len__(self):
+        return len(self.caracteristicas)
+
+    def __str__(self):
+        return f'{self.nome} e tenho como caracteristicas {
+            self.caracteristicas}'
+
+
+pessoa = Pessoa('John')
+print(f'3. double underscore: {pessoa.nome}')
+print(f'3. double underscore: {repr(pessoa)}')
+print(f'3. double underscore: {len(pessoa)}')
+print(f'3. double underscore: {str(pessoa)}')
+print(f'3. double underscore: {pessoa}')
+
+# print todos os métodos aplicaveis para a classe
+print(f'3. double underscore: \n{dir(pessoa)}')
